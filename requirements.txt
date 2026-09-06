@@ -1,0 +1,11 @@
+streamlit
+langchain>=0.3,<0.4
+langchain-community>=0.3,<0.4
+langchain-text-splitters>=0.3,<0.4
+langchain-google-genai>=2.0,<3.0
+langchain-huggingface
+sentence-transformers
+certifi
+faiss-cpu
+pypdf
+python-dotenv
