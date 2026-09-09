@@ -1,4 +1,4 @@
-# PaperPilot — RAG Document Q&A Assistant
+# PaperPilot an RAG Document Q&A Assistant
 
 Chatbot AI berbasis **Retrieval-Augmented Generation (RAG)** yang bisa menjawab
 pertanyaan berdasarkan isi dokumen PDF yang kamu upload. Dibangun dengan
@@ -39,41 +39,7 @@ indexing dokumen tidak dibatasi kuota API. Bagian yang benar-benar memproses
 bahasa alami dan menghasilkan jawaban ke pengguna (LLM) sepenuhnya
 menggunakan **Gemini API**.
 
-## Cara Menjalankan (VS Code + Miniconda)
 
-1. Buka folder ini di VS Code.
-2. Buat environment conda:
-   ```bash
-   conda create -n paperpilot python=3.11 -y
-   conda activate paperpilot
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Salin `.env.example` jadi `.env`, isi API key Gemini kamu:
-   ```bash
-   cp .env.example .env
-   ```
-5. Jalankan aplikasi:
-   ```bash
-   streamlit run app.py
-   ```
-6. Browser otomatis kebuka di `http://localhost:8501`.
-   - Upload satu atau lebih file PDF di sidebar
-   - Klik "Process documents"
-   - Mulai tanya-tanya di kolom chat
-
-## Konfigurasi (.env)
-
-```
-GOOGLE_API_KEY=isi_api_key_kamu_disini
-GEMINI_CHAT_MODEL=gemini-3.6-flash
-EMBEDDING_MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
-```
-
-`GOOGLE_API_KEY` wajib diisi untuk bagian chat/LLM. `EMBEDDING_MODEL_NAME`
-berjalan lokal dan tidak butuh API key.
 
 ## Struktur Proyek
 
@@ -82,18 +48,14 @@ paperpilot/
 ├── app.py               # UI Streamlit (upload, chat, citation)
 ├── rag_engine.py         # Logic RAG: loading, chunking, embedding, retrieval chain
 ├── requirements.txt
-├── .env.example
+├── .env
 ├── .streamlit/config.toml
 ├── assets/               # Logo
 ├── .gitignore
 └── README.md
 ```
 
-## Deployment
 
-Aplikasi ini bisa di-deploy ke Streamlit Community Cloud langsung dari
-repository ini. Saat deploy, isi konfigurasi di atas melalui menu
-"Secrets" pada dashboard Streamlit Cloud, bukan lewat file `.env`.
 
 ## Potensi Pengembangan Lanjutan
 
